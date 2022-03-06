@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Data,Comments} from "../interfaces/data";
+import {Types,Comments} from "../interfaces/types";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {HttpClient} from '@angular/common/http';

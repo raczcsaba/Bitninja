@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Data } from '../interfaces/data';
+import { Types } from '../interfaces/types';
 import { GetdataService } from '../services/getdata.service';
 
 
@@ -13,8 +13,8 @@ export class BejegyzesekComponent implements OnInit {
 
   constructor(private dataService: GetdataService) { }
 
-  data:Data[] = [];
-  selectedPost?: Data;
+  data:Types[] = [];
+  selectedPost?: Types;
 
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class BejegyzesekComponent implements OnInit {
 
   lastChapter = 0;
 
-  displayId(item:Data): boolean {
+  displayId(item:Types): boolean {
     if (item.userId !== this.lastChapter) {
       this.lastChapter = item.userId;
       return true;
@@ -37,7 +37,7 @@ export class BejegyzesekComponent implements OnInit {
       return false;
     }
   }
-  onSelect(post: Data): void {
+  onSelect(post: Types): void {
     this.selectedPost = post;
   }
 

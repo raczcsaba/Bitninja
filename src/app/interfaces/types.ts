@@ -1,4 +1,4 @@
-export interface Data {
+export interface Types {
   userId: number;
   id: number;
   title: string;

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GetdataService } from '../services/getdata.service';
 import { GetCommentsService } from '../services/get-comments.service';
 
-import {Data,Comments} from "../interfaces/data";
+import {Types,Comments} from "../interfaces/types";
 
 @Component({
   selector: 'app-bejegyzes-detail',
@@ -19,8 +19,8 @@ export class BejegyzesDetailComponent implements OnInit {
     private commentService: GetCommentsService,
   ) { }
 
-  item?:Data;
-  data:Data[]=[];
+  item?:Types;
+  data:Types[]=[];
   comments:Comments[] = [];
 
   ngOnInit(): void {
@@ -34,7 +34,6 @@ export class BejegyzesDetailComponent implements OnInit {
 
   getPost(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id)
     this.dataService.getPost(this.data,id)
       .subscribe(res => {
         this.item = res;

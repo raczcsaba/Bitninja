@@ -2,7 +2,7 @@ import { Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from "rxjs";
 import { environment } from '../../environments/environment';
-import {Data} from "../interfaces/data";
+import {Types} from "../interfaces/types";
 
 
 @Injectable({
@@ -11,14 +11,14 @@ import {Data} from "../interfaces/data";
 
 export class GetdataService {
 
-  getData(): Observable<Data> {
-    return this.httpClient.get<Data>(`${environment.apiUrl}/posts/`,{
+  getData(): Observable<Types> {
+    return this.httpClient.get<Types>(`${environment.apiUrl}/posts/`,{
       observe: 'body',
       responseType: 'json',
     });
   }
 
-  getPost(data:Data[],id:number): Observable<Data> {
+  getPost(data:Types[], id:number): Observable<Types> {
 
     const item = data.find(h => h.id === id)!;
     return of(item);

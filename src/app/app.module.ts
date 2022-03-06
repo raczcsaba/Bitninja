@@ -12,12 +12,16 @@ import { GetCommentsService } from  './services/get-comments.service';
 
 import { BejegyzesDetailComponent } from './bejegyzes-detail/bejegyzes-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PostComponent } from './post/post.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BejegyzesekComponent,
-    BejegyzesDetailComponent
+    BejegyzesDetailComponent,
+    PostComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

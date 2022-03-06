@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GetdataService } from  './services/getdata.service';
+import { BejegyzesDetailComponent } from './bejegyzes-detail/bejegyzes-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BejegyzesekComponent
+    BejegyzesekComponent,
+    BejegyzesDetailComponent
   ],
   imports: [
     BrowserModule,

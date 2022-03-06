@@ -2,10 +2,9 @@
 
 <div class="container ">
   <ul class="list-group">
-    <li *ngFor="let post of Data" class="list-group-item" [class.active]="post === selectedPost" (click)="onSelect(post)">
-
-      <span>{{post.title}} - </span>
-      <span>{{post.body}}</span>
+    <li *ngFor="let post of data" class="list-group-item" [class.active]="post === selectedPost" (click)="onSelect(post)">
+      <h1 *ngIf="displayId(post)">{{ post.userId }}. bejegyzés - </h1>
+      <span>{{post.title}}</span>
 
     </li>
   </ul>

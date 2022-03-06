@@ -24,15 +24,7 @@ export class BejegyzesekComponent implements OnInit {
   getData(): void {
     this.dataService.getData().subscribe( res =>{
       this.data = this.data.concat(res);
-      console.log(res)
-    },
-      error => {
-      console.log(error.error);
-
-    },
-      () => {
-
-      }  );
+    });
   }
 
   lastChapter = 0;

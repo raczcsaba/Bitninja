@@ -8,7 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GetdataService } from  './services/getdata.service';
+import { GetCommentsService } from  './services/get-comments.service';
+
 import { BejegyzesDetailComponent } from './bejegyzes-detail/bejegyzes-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import { BejegyzesDetailComponent } from './bejegyzes-detail/bejegyzes-detail.co
     HttpClientModule,
     FormsModule,
     NgbModule,
+    AppRoutingModule,
   ],
   providers: [
-    GetdataService
+    GetdataService,
+    GetCommentsService,
   ],
   bootstrap: [AppComponent]
 })

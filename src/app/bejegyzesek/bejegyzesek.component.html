@@ -2,8 +2,8 @@
 
 <div class="container ">
   <ul class="list-group">
-    <li *ngFor="let post of data" class="list-group-item" [class.active]="post === selectedPost" (click)="onSelect(post)">
-      <h1 *ngIf="displayId(post)">{{ post.userId }}. bejegyzés - </h1>
+    <li *ngFor="let post of data" routerLink="/bejegyzes/{{post.id}}" class="list-group-item" [class.active]="post === selectedPost" (mouseover)="onSelect(post)">
+      <h1 *ngIf="displayId(post)">{{ post.userId }}. kategória</h1>
       <span>{{post.title}}</span>
 
     </li>

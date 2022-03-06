@@ -1,1 +1,13 @@
-<p>bejegyzesek works!</p>
+<h2>Bejegyzések</h2>
+
+<div class="container ">
+  <ul class="list-group">
+    <li *ngFor="let post of Data" class="list-group-item" [class.active]="post === selectedPost" (click)="onSelect(post)">
+
+      <span>{{post.title}} - </span>
+      <span>{{post.body}}</span>
+
+    </li>
+  </ul>
+</div>
+

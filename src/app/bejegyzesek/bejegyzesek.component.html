@@ -1,12 +1,18 @@
-<h2>Bejegyzések</h2>
 
-<div class="container ">
-  <ul class="list-group">
-    <li *ngFor="let post of data" routerLink="/bejegyzes/{{post.id}}" class="list-group-item" [class.active]="post === selectedPost" (mouseover)="onSelect(post)">
-      <h1 *ngIf="displayId(post)">{{ post.userId }}. kategória</h1>
-      <span>{{post.title}}</span>
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Bejegyzések</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div  *ngFor="let post of data" class="col-md-12 col-lg-6 col-xl-4 d-flex align-items-start">
+        <div>
+          <h2>{{post.title | uppercase}}</h2>
+          <p>{{post.body}}</p>
+          <a routerLink="/bejegyzes/{{post.id}}" href="#" class="btn btn-primary">
+            Kommentek
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    </li>
-  </ul>
-</div>
+
 

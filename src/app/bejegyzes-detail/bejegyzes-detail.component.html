@@ -1,10 +1,11 @@
-<p>bejegyzes-detail works!</p>
-<h1 *ngIf="item">{{ item.id }}. bejegyzés</h1>
-<div class="container ">
-  <ul class="list-group">
-    <li *ngFor="let comment of comments" class="list-group-item disabled" >
-      <span>{{comment.name}}</span>
+<div class="container px-4 py-5">
+  <h2 class="pb-2 border-bottom" *ngIf="item">{{ item.id }}. bejegyzés - {{item.title}}</h2>
+  <div class="container ">
+    <ul class="list-group">
+      <li *ngFor="let comment of comments" class="list-group-item disabled" >
+        <span>{{comment.name}}</span>
 
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -4,24 +4,14 @@ import {Observable, of} from "rxjs";
 import { environment } from '../../environments/environment';
 import {Types} from "../interfaces/types";
 
-
 @Injectable({
   providedIn: 'root'
 })
-
-export class GetdataService {
+export class PostDataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getData(): Observable<Types> {
-    return this.httpClient.get<Types>(`${environment.apiUrl}/posts/`);
+  postData(item:Types): Observable<any>{
+    return this.httpClient.post(`${environment.apiUrl}/posts`,item);
   }
-
-  getPost(data:Types[], id:number): Observable<Types> {
-
-    const item = data.find(h => h.id === id)!;
-    return of(item);
-  }
-
-
 }

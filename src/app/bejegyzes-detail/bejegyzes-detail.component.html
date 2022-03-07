@@ -1,10 +1,17 @@
 <div class="container px-4 py-5">
-  <h2 class="pb-2 border-bottom" *ngIf="item">{{ item.id }}. bejegyzés - {{item.title}}</h2>
+  <div *ngIf="item" class="col-12">
+    <h2 class="pb-2 border-bottom">{{ item.id }}. bejegyzés - {{item.title}}</h2>
+    <div class="container">
+      {{item.body}}
+    </div>
+  </div>
+
   <div class="container ">
+    <h5>Kommentek:</h5>
     <ul class="list-group">
       <li *ngFor="let comment of comments" class="list-group-item disabled" >
-        <span>{{comment.name}}</span>
-
+        <h6>{{comment.email}}</h6>
+        {{comment.body}}
       </li>
     </ul>
   </div>

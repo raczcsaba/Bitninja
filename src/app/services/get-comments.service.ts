@@ -10,6 +10,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GetCommentsService {
 
+  constructor(private httpClient: HttpClient) { }
+
   getComments(id:number): Observable<Comments> {
     return this.httpClient.get<Comments>(`${environment.apiUrl}/posts/${id}/comments`,{
       observe: 'body',
@@ -17,5 +19,4 @@ export class GetCommentsService {
     });
   }
 
-  constructor(private httpClient: HttpClient) { }
 }
